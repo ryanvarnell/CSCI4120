@@ -13,6 +13,8 @@ intended directory and running:
 
 > $ python3 KNN.py
 
+A line chart will generate after all accuracies have been computed.
+
 ### Dependencies:
 
 Python >= 3.8  
@@ -24,4 +26,6 @@ MatPlotLib >= 3.5.3
 After repeated runs of the program, it would seem no 
 K-value in this set (1-20) is any "better" than other K-values in
 the set overall. One K-value that exceeds expectations in one 
-round may be average--or worse--in the following rounds.
+round may be average--or worse--in the following rounds. I expect 
+this is due to both the similarity in plant species and the relatively
+small size of the data set.
