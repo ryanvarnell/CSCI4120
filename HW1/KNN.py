@@ -84,10 +84,7 @@ def main():
             k_average += accuracy
         k_average /= len(k_accuracy)
         k_averages.append(k_average)
-        if x % 2 == 0:
-            plt.text(x + 1.1, max(k_accuracy) + 3, repr(k_average) + '%', size='x-small')
-        else:
-            plt.text(x + 1.1, min(k_accuracy) - 5, repr(k_average) + '%', size='x-small')
+        print('Average accuracy for k=' + repr(x) + ' is: ' + repr(k_average) + '%')
 
     # Calculate average accuracy.
     total_items = 0
@@ -100,9 +97,8 @@ def main():
     average_accuracy /= total_items
 
     # Build graph.
-    plt.plot(range(1, 21), k_averages, 'y')
-    plt.ylim(0, 100)
-    plt.ylabel('Accuracy\nNoted % values are per-k averages')
+    plt.plot(range(1, 21), k_averages, 'k')
+    plt.ylabel('Accuracy')
     plt.xlim(0, len(accuracies))
     plt.xticks(range(20))
     plt.xlabel('k Value')
