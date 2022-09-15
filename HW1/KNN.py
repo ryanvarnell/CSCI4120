@@ -84,7 +84,7 @@ def main():
             k_average += accuracy
         k_average /= len(k_accuracy)
         k_averages.append(k_average)
-        print('Average accuracy for k=' + repr(x) + ' is: ' + repr(k_average) + '%')
+        print('Average accuracy for k=' + repr(x + 1) + ' is: ' + repr(k_average) + '%')
 
     # Calculate average accuracy.
     total_items = 0
