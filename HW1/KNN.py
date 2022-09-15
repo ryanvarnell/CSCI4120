@@ -72,17 +72,22 @@ def main():
 
     # Collect accuracies for k values 1-20.
     accuracies = []
+    k_averages = []
     for x in range(20):
         k_accuracy = []
         for y in range(5):
             k_accuracy.append(knn(0.67, x + 1))
-            plt.plot(x + 1, k_accuracy[-1], 'bo')
+            plt.plot(x + 1, k_accuracy[-1], 'k.')
         accuracies.append(k_accuracy)
         k_average = 0
         for accuracy in k_accuracy:
             k_average += accuracy
         k_average /= len(k_accuracy)
-        plt.text(x + 1.1, max(k_accuracy) + 2, repr(k_average) + '%', size='x-small', weight='bold')
+        k_averages.append(k_average)
+        if x % 2 == 0:
+            plt.text(x + 1.1, max(k_accuracy) + 3, repr(k_average) + '%', size='x-small')
+        else:
+            plt.text(x + 1.1, min(k_accuracy) - 5, repr(k_average) + '%', size='x-small')
 
     # Calculate average accuracy.
     total_items = 0
@@ -95,6 +100,7 @@ def main():
     average_accuracy /= total_items
 
     # Build graph.
+    plt.plot(range(1, 21), k_averages, 'r')
     plt.ylim(0, 100)
     plt.ylabel('Accuracy\nNoted % values are per-k averages')
     plt.xlim(0, len(accuracies))
@@ -102,8 +108,6 @@ def main():
     plt.xlabel('k Value')
     plt.title('KNN Accuracies for Increasing k-Values\nTotal Average accuracy rating is: ' + repr(average_accuracy) + '%', weight='bold')
     plt.show()
-
-    print('Average accuracy is ' + repr(average_accuracy) + '%')
 
 
 main()
