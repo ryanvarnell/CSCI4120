@@ -21,3 +21,7 @@ MatPlotLib >= 3.5.3
 
 ## Which k-Value Works the Best?
 
+After repeated runs of the program, it would seem no 
+K-value in this set (1-20) is any "better" than other K-values in
+the set overall. One K-value that exceeds expectations in one 
+round may be average--or worse--in the following rounds.
