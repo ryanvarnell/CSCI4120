@@ -13,10 +13,11 @@ intended directory and running:
 
 > $ python3 KNN.py
 
-#### Dependencies:
+### Dependencies:
 
 Python >= 3.8  
 Pandas >= 1.4.4  
 MatPlotLib >= 3.5.3
 
 ## Which k-Value Works the Best?
+
